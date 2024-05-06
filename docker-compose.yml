@@ -1,0 +1,22 @@
+version: "3.9" # optional since v1.27.0
+services:
+  mrds:
+    image: mikeintosh/mrds_rstudio_j:${VERSION_TAG}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${RSTUDIO_PORT}:8787" #rstudio
+      - "127.0.0.1:${SHINY_PORT}:3838" #shiny
+    ## The environment does not work properly,
+    ## see <https://github.com/rstudio/renv/issues/446>
+    # environment:
+    # - DISPLAY=192.168.0.1:0
+    # volumes:
+      ## work:
+      # - /d/Docker/container/docker-share/R:/home/user/share
+      # - /d/git-local:/home/user/git-local
+    ## home:
+    # - /k/Docker/docker-share/R:/home/user/share
+    # - /d/git-local:/home/user/git-local
+    tty: true
+    privileged: true
+    hostname: docker-mrds

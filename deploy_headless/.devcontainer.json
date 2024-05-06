@@ -1,0 +1,32 @@
+{
+    "name": "r datascience",
+    "image": "mrds_headless:latest",
+    "forwardPorts": [3000, 3838],
+    "workspaceFolder": "/home/user/",
+    "extensions": [
+      "ikuyadeu.r",
+      "reditorsupport.r-lsp",
+      "grapecity.gc-excelviewer",
+      "ms-python.python"
+    ],
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "r.alwaysUseActiveTerminal": true,
+      "r.bracketedPaste": true,
+      "r.sessionWatcher": true,
+      "[r]": {
+          "editor.formatOnSave": false
+      },
+      "python.disableInstallationCheck": true,
+      "terminal.integrated.inheritEnv": false,
+      "python.pythonPath": "/home/user/.local/share/r-miniconda/envs/r-reticulate/bin/python"
+    },
+    "remoteUser": "user",
+    "remoteEnv": {
+      "R_HOME": "/usr/lib/R",
+      "TERM_PROGRAM": "vscode"
+    },
+    "mounts": [
+      "source=/mount/this/folder,target=/home/user/development,type=bind,consistency=cached"
+    ]
+  }
